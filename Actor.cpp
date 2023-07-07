@@ -16,10 +16,6 @@ void AActor::Input()
 {
 }
 
-void AActor::Tick()
-{
-}
-
 void AActor::Render()
 {
     COORD Cur;

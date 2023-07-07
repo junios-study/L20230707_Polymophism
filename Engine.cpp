@@ -1,7 +1,13 @@
 #include "Engine.h"
+#include <conio.h>
+#include "Player.h"
+#include "Monster.h"
+
+Engine* Engine::Instance = nullptr;
 
 Engine::Engine()
 {
+	Instance = this;
 }
 
 Engine::~Engine()
@@ -33,7 +39,7 @@ void Engine::SpawnActor(AActor* NewActor)
 
 void Engine::Input()
 {
-
+	KeyCode = _getch();
 }
 
 void Engine::Tick()
@@ -46,6 +52,18 @@ void Engine::Tick()
 	//ranged for, c++ 11, c++ 14
 	for (auto Current : Actors)
 	{
+		//APlayer* Player = dynamic_cast<APlayer*>(Current);
+		//if (Player != nullptr)
+		//{
+		//	Player->X++;
+		//}
+
+		//AMonster* Monster = dynamic_cast<AMonster*>(Current);
+		//if (Monster != nullptr)
+		//{
+		//	Monster->Y++;
+		//}
+
 		Current->Tick();
 	}
 }
@@ -56,6 +74,7 @@ void Engine::Render()
 	//{
 	//	Actors[i].Render();
 	//}
+	system("cls");
 
 	//ranged for, c++ 11, c++ 14
 	for (auto Current : Actors)

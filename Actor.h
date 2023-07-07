@@ -1,5 +1,7 @@
 #pragma once
-class AActor
+
+//Abstract Class
+class AActor 
 {
 public:
 	AActor();
@@ -9,8 +11,9 @@ public:
 	int Y;
 	char Shape;
 
-	void Input();
-	void Tick();
+
+	void Input(); 
+	virtual void Tick() = 0; //pure virtual function
 	void Render();
 };
 

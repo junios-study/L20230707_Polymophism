@@ -11,7 +11,9 @@ using namespace std;
 
 int main()
 {
+
 	Engine* MyEngine = new Engine();
+
 
 	MyEngine->SpawnActor(new APlayer());
 	MyEngine->SpawnActor(new AMonster());

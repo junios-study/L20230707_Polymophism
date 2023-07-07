@@ -6,5 +6,7 @@ class AWall : public AActor
 {
 	AWall();
 	virtual ~AWall();
+
+	virtual void Tick() override;
 };
 

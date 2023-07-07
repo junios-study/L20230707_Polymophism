@@ -14,7 +14,12 @@ public:
 
 	void SpawnActor(AActor* NewActor);
 
+	static Engine* Instance;
+
+	inline int GetKeyCode() { return KeyCode; }
+
 protected:
+	int KeyCode;
 	void Input();
 	void Tick();
 	void Render();
@@ -22,7 +27,10 @@ protected:
 	vector<AActor*> Actors;
 
 	bool bIsRunning = true;
-
-
 };
+
+
+
+#define GEngine			Engine::Instance
+
 
